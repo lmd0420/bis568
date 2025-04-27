@@ -31,7 +31,7 @@ st.title("❤️ Heart Disease Prediction App")
 st.write("Fill out the form below to predict if you have heart disease risk.")
 
 # Define input fields
-age = st.slider('Age', 20, 100, 50)
+age = st.slider('Age', 18, 100, 50)
 sex = st.selectbox('Sex', options=['Male', 'Female'])
 chest_pain_type = st.selectbox('Chest Pain Type', options=['TA', 'ATA', 'NAP', 'ASY'])
 resting_bp = st.number_input('Resting Blood Pressure (mm Hg)', min_value=50, max_value=200, value=120)
