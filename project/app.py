@@ -8,13 +8,20 @@ import numpy as np
 import xgboost as xgb
 import joblib
 
-# ========================================
-# Load Your Trained XGBoost Model
-# ========================================
-# Assume you've saved your model like this:
-# joblib.dump(xgb_model, 'xgb_model.pkl')
+import os
+import urllib.request
 
-model = joblib.load('xgb_model.pkl')  # <-- replace with your actual model path
+# URL to your xgb_model.pkl on GitHub (raw link, not webpage!)
+model_url = "https://raw.githubusercontent.com/lmd0420/bis568/main/project/xgb_model.pkl"
+model_path = "xgb_model.pkl"
+
+# Download if not exists
+if not os.path.exists(model_path):
+    urllib.request.urlretrieve(model_url, model_path)
+
+# Now load the model
+import joblib
+model = joblib.load(model_path)
 
 # ========================================
 # Streamlit UI
